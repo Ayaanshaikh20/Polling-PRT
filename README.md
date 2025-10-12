@@ -13,6 +13,7 @@ A simple polling app where users can register/login, vote on polls, and see live
 ---
 
 ## 💻 Folder Structure
+```text
 VOTEPOLL PRT/
 │
 ├─ server/
@@ -27,6 +28,7 @@ VOTEPOLL PRT/
 │  │  ├─ pages/     # Pages (login.jsx, polls.jsx)
 │  │  └─ main.jsx
 │  └─ package.json
+```
 
 
 ## ⚡ Requirements
