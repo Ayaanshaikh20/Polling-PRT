@@ -1,5 +1,4 @@
-import React from 'react'
-import { Link, useNavigate } from 'react-router'
+import { useNavigate } from 'react-router'
 
 const Header = () => {
 
@@ -10,7 +9,7 @@ const Header = () => {
       <h1 className="text-2xl font-bold text-gray-800">Feedback App</h1>
       <nav className="ml-auto flex items-center gap-4">
         <button onClick={() => navigate("/")} className=" bg-blue-600 p-1 shadow-lg rounded-lg text-white px-3 hover:bg-blue-700 ">
-          Submit Feeback
+          Feeback Form
         </button>
         <button
           onClick={() => navigate("/feedbacks")}
