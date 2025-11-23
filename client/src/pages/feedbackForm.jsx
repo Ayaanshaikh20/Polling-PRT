@@ -18,14 +18,12 @@ const FeedbackForm = () => {
             setStatus({ type: "error", msg: "All fields are required." });
             return;
         }
-
         try {
             setSubmitting(true);
             await axios.post(`/api/feedback`, form);
             setStatus({ type: "success", msg: "Feedback sent successfully!" });
             setForm({ name: "", email: "", message: "" });
         } catch (err) {
-            console.error(err);
             setStatus({
                 type: "error",
                 msg: err.response?.data?.error || "Something went wrong",
@@ -40,8 +38,6 @@ const FeedbackForm = () => {
             <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
                 Submit Feedback
             </h2>
-
-            {/* Status Message */}
             {status.msg && (
                 <div
                     className={`mb-4 p-3 rounded text-white ${status.type === "success" ? "bg-green-500" : "bg-red-500"
@@ -50,13 +46,10 @@ const FeedbackForm = () => {
                     {status.msg}
                 </div>
             )}
-
-            {/* Form Card */}
             <form
                 onSubmit={handleSubmit}
                 className="bg-white shadow-lg rounded-lg border-2 p-6 space-y-4"
             >
-                {/* Name */}
                 <div>
                     <label className="block text-gray-700 font-medium mb-1">Name*</label>
                     <input
@@ -67,8 +60,6 @@ const FeedbackForm = () => {
                         placeholder="Enter your name"
                     />
                 </div>
-
-                {/* Email */}
                 <div>
                     <label className="block text-gray-700 font-medium mb-1">Email*</label>
                     <input
@@ -79,8 +70,6 @@ const FeedbackForm = () => {
                         placeholder="Enter your email"
                     />
                 </div>
-
-                {/* Message */}
                 <div>
                     <label className="block text-gray-700 font-medium mb-1">
                         Message*
@@ -94,8 +83,6 @@ const FeedbackForm = () => {
                         placeholder="Write your feedback..."
                     />
                 </div>
-
-                {/* Submit Button */}
                 <button
                     type="submit"
                     disabled={submitting}
